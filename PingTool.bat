@@ -16,14 +16,26 @@ if "%site%"=="" (
 echo Pinging %site%...
 ping %site% -n 1 > nul
 if errorlevel 1 (
-    echo Internet is not working.
-	echo.
-	echo Written by Tactics.
+    echo Internet is not working. There was no response from %site%.
+    echo.
+    echo Written by ...
+    echo ".------..------..------..------..------..------..------."
+    echo "|T.--. ||A.--. ||C.--. ||T.--. ||I.--. ||C.--. ||S.--. |"
+    echo "| :/\: || (\/) || :/\: || :/\: || (\/) || :/\: || :/\: |"
+    echo "| (__) || :\/: || :\/: || (__) || :\/: || :\/: || :\/: |"
+    echo "| '--'T|| '--'A|| '--'C|| '--'T|| '--'I|| '--'C|| '--'S|"
+    echo "`------'`------'`------'`------'`------'`------'`------'"
 ) else (
     for /f "tokens=1,2 delims== " %%a in ('ping %site% -n 4 ^| find "Average"') do set avgPing=%%b
-    echo Internet is working. Average ping to !site! is: !avgPing!
+    echo Internet is working. Average ping to %site% is: %avgPing%
     echo.
-    echo Written by Tactics.
+    echo Written by ...
+    echo ".------..------..------..------..------..------..------."
+    echo "|T.--. ||A.--. ||C.--. ||T.--. ||I.--. ||C.--. ||S.--. |"
+    echo "| :/\: || (\/) || :/\: || :/\: || (\/) || :/\: || :/\: |"
+    echo "| (__) || :\/: || :\/: || (__) || :\/: || :\/: || :\/: |"
+    echo "| '--'T|| '--'A|| '--'C|| '--'T|| '--'I|| '--'C|| '--'S|"
+    echo "`------'`------'`------'`------'`------'`------'`------'"
 )
 
 pause
